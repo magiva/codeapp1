@@ -16,6 +16,18 @@
         "kontakter": {
           "entitySetName": "contacts",
           "logicalName": "contact"
+        },
+        "forretningsforbindelser": {
+          "entitySetName": "accounts",
+          "logicalName": "account"
+        },
+        "salgsmuligheter": {
+          "entitySetName": "opportunities",
+          "logicalName": "opportunity"
+        },
+        "tilbud": {
+          "entitySetName": "quotes",
+          "logicalName": "quote"
         }
       },
       "environmentVariableName": ""

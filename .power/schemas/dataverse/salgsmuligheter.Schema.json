@@ -1,0 +1,3317 @@
+{
+  "name": "opportunity",
+  "title": "Salgsmuligheter",
+  "schema": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "x-ms-dataverse-entity": true,
+      "x-ms-dataverse-entityset": "opportunities",
+      "x-ms-dataverse-primary-id": "opportunityid",
+      "x-ms-dataverse-primary-name": "name",
+      "properties": {
+        "accountid": {
+          "type": "string",
+          "title": "Forretningsforbindelse",
+          "x-ms-dataverse-attribute": "accountid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "AccountId",
+          "x-ms-read-only": true
+        },
+        "accountidname": {
+          "type": "string",
+          "title": "accountidname",
+          "x-ms-dataverse-attribute": "accountidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "AccountIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "accountidyominame": {
+          "type": "string",
+          "title": "accountidyominame",
+          "x-ms-dataverse-attribute": "accountidyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "AccountIdYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "actualclosedate": {
+          "type": "string",
+          "title": "Faktisk lukkingsdato",
+          "x-ms-dataverse-attribute": "actualclosedate",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "ActualCloseDate"
+        },
+        "actualvalue": {
+          "type": "string",
+          "title": "Faktisk omsetning",
+          "x-ms-dataverse-attribute": "actualvalue",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "ActualValue"
+        },
+        "actualvalue_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "actualvalue_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "ActualValue_Base",
+          "x-ms-read-only": true
+        },
+        "budgetamount": {
+          "type": "string",
+          "title": "Budsjettbeløp",
+          "x-ms-dataverse-attribute": "budgetamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "BudgetAmount"
+        },
+        "budgetamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "budgetamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "BudgetAmount_Base",
+          "x-ms-read-only": true
+        },
+        "budgetstatus": {
+          "type": "string",
+          "title": "Budsjett",
+          "x-ms-dataverse-attribute": "budgetstatus",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "BudgetStatus",
+          "enum": [
+            "No Committed Budget",
+            "May Buy",
+            "Can Buy",
+            "Will Buy"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "13119605-ae9a-4fad-a889-3bd435bf6c46",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Budget",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "budgettypename": {
+          "type": "string",
+          "title": "budgettypename",
+          "x-ms-dataverse-attribute": "budgettypename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "BudgetTypeName",
+          "x-ms-read-only": true
+        },
+        "campaignid": {
+          "type": "string",
+          "title": "Kildekampanje",
+          "x-ms-dataverse-attribute": "campaignid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "CampaignId"
+        },
+        "campaignidname": {
+          "type": "string",
+          "title": "campaignidname",
+          "x-ms-dataverse-attribute": "campaignidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CampaignIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "captureproposalfeedback": {
+          "type": "string",
+          "title": "Tilbakemelding om forslag er lagret",
+          "x-ms-dataverse-attribute": "captureproposalfeedback",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "CaptureProposalFeedback",
+          "enum": [
+            "Ja",
+            "Nei"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "16d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Tilbakemelding om forslag er lagret",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "captureproposalfeedbackname": {
+          "type": "string",
+          "title": "captureproposalfeedbackname",
+          "x-ms-dataverse-attribute": "captureproposalfeedbackname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "CaptureProposalFeedbackName",
+          "x-ms-read-only": true
+        },
+        "closeprobability": {
+          "type": "string",
+          "title": "Sannsynlighet",
+          "x-ms-dataverse-attribute": "closeprobability",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "CloseProbability"
+        },
+        "completefinalproposal": {
+          "type": "string",
+          "title": "Endelig forslag klart",
+          "x-ms-dataverse-attribute": "completefinalproposal",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "CompleteFinalProposal",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "fbd1dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Endelig forslag klart",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "completefinalproposalname": {
+          "type": "string",
+          "title": "completefinalproposalname",
+          "x-ms-dataverse-attribute": "completefinalproposalname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "CompleteFinalProposalName",
+          "x-ms-read-only": true
+        },
+        "completeinternalreview": {
+          "type": "string",
+          "title": "Fullfør intern gjennomgang",
+          "x-ms-dataverse-attribute": "completeinternalreview",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "CompleteInternalReview",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "e7d1dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Fullfør intern gjennomgang",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "completeinternalreviewname": {
+          "type": "string",
+          "title": "completeinternalreviewname",
+          "x-ms-dataverse-attribute": "completeinternalreviewname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "CompleteInternalReviewName",
+          "x-ms-read-only": true
+        },
+        "confirminterest": {
+          "type": "string",
+          "title": "Bekreft interesse",
+          "x-ms-dataverse-attribute": "confirminterest",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "ConfirmInterest",
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "2be865d9-997f-496b-9fa1-f731ab38b6e2",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Confirm Interest",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "confirminterestname": {
+          "type": "string",
+          "title": "confirminterestname",
+          "x-ms-dataverse-attribute": "confirminterestname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "ConfirmInterestName",
+          "x-ms-read-only": true
+        },
+        "contactid": {
+          "type": "string",
+          "title": "Kontakt",
+          "x-ms-dataverse-attribute": "contactid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ContactId",
+          "x-ms-read-only": true
+        },
+        "contactidname": {
+          "type": "string",
+          "title": "contactidname",
+          "x-ms-dataverse-attribute": "contactidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ContactIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "contactidyominame": {
+          "type": "string",
+          "title": "contactidyominame",
+          "x-ms-dataverse-attribute": "contactidyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ContactIdYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "createdby": {
+          "type": "string",
+          "title": "Opprettet av",
+          "x-ms-dataverse-attribute": "createdby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "CreatedBy",
+          "x-ms-read-only": true
+        },
+        "createdbyname": {
+          "type": "string",
+          "title": "createdbyname",
+          "x-ms-dataverse-attribute": "createdbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedByName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "createdbyyominame": {
+          "type": "string",
+          "title": "createdbyyominame",
+          "x-ms-dataverse-attribute": "createdbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedByYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "createdon": {
+          "type": "string",
+          "title": "Opprettet den",
+          "x-ms-dataverse-attribute": "createdon",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "CreatedOn",
+          "x-ms-read-only": true
+        },
+        "createdonbehalfby": {
+          "type": "string",
+          "title": "Opprettet av (representant)",
+          "x-ms-dataverse-attribute": "createdonbehalfby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "CreatedOnBehalfBy",
+          "x-ms-read-only": true
+        },
+        "createdonbehalfbyname": {
+          "type": "string",
+          "title": "createdonbehalfbyname",
+          "x-ms-dataverse-attribute": "createdonbehalfbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedOnBehalfByName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "createdonbehalfbyyominame": {
+          "type": "string",
+          "title": "createdonbehalfbyyominame",
+          "x-ms-dataverse-attribute": "createdonbehalfbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CreatedOnBehalfByYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "currentsituation": {
+          "type": "string",
+          "title": "Gjeldende situasjon",
+          "x-ms-dataverse-attribute": "currentsituation",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "CurrentSituation",
+          "maxLength": 2000
+        },
+        "customerid": {
+          "type": "string",
+          "title": "Kunde",
+          "x-ms-dataverse-attribute": "customerid",
+          "x-ms-dataverse-type": "CustomerType",
+          "x-ms-schema-name": "CustomerId",
+          "required": true
+        },
+        "customeridname": {
+          "type": "string",
+          "title": "customeridname",
+          "x-ms-dataverse-attribute": "customeridname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CustomerIdName",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 160
+        },
+        "customeridtype": {
+          "type": "string",
+          "title": "Type potensiell kunde",
+          "x-ms-dataverse-attribute": "customeridtype",
+          "x-ms-dataverse-type": "EntityNameType",
+          "x-ms-schema-name": "CustomerIdType",
+          "required": true
+        },
+        "customeridyominame": {
+          "type": "string",
+          "title": "customeridyominame",
+          "x-ms-dataverse-attribute": "customeridyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "CustomerIdYomiName",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 450
+        },
+        "customerneed": {
+          "type": "string",
+          "title": "Kundebehov",
+          "x-ms-dataverse-attribute": "customerneed",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "CustomerNeed",
+          "maxLength": 2000
+        },
+        "customerpainpoints": {
+          "type": "string",
+          "title": "Smertepunkt for kunde",
+          "x-ms-dataverse-attribute": "customerpainpoints",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "CustomerPainPoints",
+          "maxLength": 2000
+        },
+        "decisionmaker": {
+          "type": "string",
+          "title": "Beslutningstaker?",
+          "x-ms-dataverse-attribute": "decisionmaker",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "DecisionMaker",
+          "enum": [
+            "mark complete",
+            "completed"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "d2da358b-6de6-47be-9976-ea0fcd462851",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Decision Maker?",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "decisionmakername": {
+          "type": "string",
+          "title": "decisionmakername",
+          "x-ms-dataverse-attribute": "decisionmakername",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "DecisionMakerName",
+          "x-ms-read-only": true
+        },
+        "description": {
+          "type": "string",
+          "title": "Beskrivelse",
+          "x-ms-dataverse-attribute": "description",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "Description",
+          "maxLength": 2000
+        },
+        "developproposal": {
+          "type": "string",
+          "title": "Utarbeid forslag",
+          "x-ms-dataverse-attribute": "developproposal",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "DevelopProposal",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "ead1dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Utarbeid forslag",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "developproposalname": {
+          "type": "string",
+          "title": "developproposalname",
+          "x-ms-dataverse-attribute": "developproposalname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "DevelopProposalName",
+          "x-ms-read-only": true
+        },
+        "discountamount": {
+          "type": "string",
+          "title": "Rabattbeløp for salgsmulighet",
+          "x-ms-dataverse-attribute": "discountamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "DiscountAmount"
+        },
+        "discountamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "discountamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "DiscountAmount_Base",
+          "x-ms-read-only": true
+        },
+        "discountpercentage": {
+          "type": "string",
+          "title": "Rabatt på salgsmulighet (%)",
+          "x-ms-dataverse-attribute": "discountpercentage",
+          "x-ms-dataverse-type": "DecimalType",
+          "x-ms-schema-name": "DiscountPercentage"
+        },
+        "emailaddress": {
+          "type": "string",
+          "title": "E-postadresse",
+          "x-ms-dataverse-attribute": "emailaddress",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "EmailAddress",
+          "maxLength": 100
+        },
+        "estimatedclosedate": {
+          "type": "string",
+          "title": "Beregnet lukkingsdato",
+          "x-ms-dataverse-attribute": "estimatedclosedate",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "EstimatedCloseDate"
+        },
+        "estimatedvalue": {
+          "type": "string",
+          "title": "Beregnet omsetning",
+          "x-ms-dataverse-attribute": "estimatedvalue",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "EstimatedValue"
+        },
+        "estimatedvalue_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "estimatedvalue_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "EstimatedValue_Base",
+          "x-ms-read-only": true
+        },
+        "evaluatefit": {
+          "type": "string",
+          "title": "Evaluer samsvar",
+          "x-ms-dataverse-attribute": "evaluatefit",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "EvaluateFit",
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "07934e5b-c448-4e3e-9df4-9062c75af7d4",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Description",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "evaluatefitname": {
+          "type": "string",
+          "title": "evaluatefitname",
+          "x-ms-dataverse-attribute": "evaluatefitname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "EvaluateFitName",
+          "x-ms-read-only": true
+        },
+        "exchangerate": {
+          "type": "string",
+          "title": "Valutakurs",
+          "x-ms-dataverse-attribute": "exchangerate",
+          "x-ms-dataverse-type": "DecimalType",
+          "x-ms-schema-name": "ExchangeRate",
+          "x-ms-read-only": true
+        },
+        "filedebrief": {
+          "type": "string",
+          "title": "Arkiver oppsummering",
+          "x-ms-dataverse-attribute": "filedebrief",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "FileDebrief",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "f8d1dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Oppsummering arkivert",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "filedebriefname": {
+          "type": "string",
+          "title": "filedebriefname",
+          "x-ms-dataverse-attribute": "filedebriefname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "FileDeBriefName",
+          "x-ms-read-only": true
+        },
+        "finaldecisiondate": {
+          "type": "string",
+          "title": "Endelig beslutningsdato",
+          "x-ms-dataverse-attribute": "finaldecisiondate",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "FinalDecisionDate"
+        },
+        "freightamount": {
+          "type": "string",
+          "title": "Fraktbeløp",
+          "x-ms-dataverse-attribute": "freightamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "FreightAmount"
+        },
+        "freightamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "freightamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "FreightAmount_Base",
+          "x-ms-read-only": true
+        },
+        "identifycompetitors": {
+          "type": "string",
+          "title": "Identifiser konkurrenter",
+          "x-ms-dataverse-attribute": "identifycompetitors",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "IdentifyCompetitors",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "12900002-d857-424d-8470-eab61c1d0cb1",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Identifisert konkurrenter?",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "identifycompetitorsname": {
+          "type": "string",
+          "title": "identifycompetitorsname",
+          "x-ms-dataverse-attribute": "identifycompetitorsname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "IdentifyCompetitorsName",
+          "x-ms-read-only": true
+        },
+        "identifycustomercontacts": {
+          "type": "string",
+          "title": "Identifiser kundekontakter",
+          "x-ms-dataverse-attribute": "identifycustomercontacts",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "IdentifyCustomerContacts",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "a7ecc575-d5e9-4f32-9383-e24587ccd5b8",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Identifisert kundekontakter?",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "identifycustomercontactsname": {
+          "type": "string",
+          "title": "identifycustomercontactsname",
+          "x-ms-dataverse-attribute": "identifycustomercontactsname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "IdentifyCustomerContactsName",
+          "x-ms-read-only": true
+        },
+        "identifypursuitteam": {
+          "type": "string",
+          "title": "Identifiser salgsteam",
+          "x-ms-dataverse-attribute": "identifypursuitteam",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "IdentifyPursuitTeam",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "5c9cddd9-3a5d-4f05-86f3-16e1df1f34bc",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Identifisert oppfølgingsteam?",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "identifypursuitteamname": {
+          "type": "string",
+          "title": "identifypursuitteamname",
+          "x-ms-dataverse-attribute": "identifypursuitteamname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "IdentifyPursuitTeamName",
+          "x-ms-read-only": true
+        },
+        "importsequencenumber": {
+          "type": "string",
+          "title": "Importsekvensnummer",
+          "x-ms-dataverse-attribute": "importsequencenumber",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "ImportSequenceNumber"
+        },
+        "initialcommunication": {
+          "type": "string",
+          "title": "Innledende kommunikasjon",
+          "x-ms-dataverse-attribute": "initialcommunication",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "InitialCommunication",
+          "enum": [
+            "Contacted",
+            "Not Contacted"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "8e76ca1c-8d7c-45d2-b870-25b108a31792",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Initial Communication",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "initialcommunicationname": {
+          "type": "string",
+          "title": "initialcommunicationname",
+          "x-ms-dataverse-attribute": "initialcommunicationname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "InitialCommunicationName",
+          "x-ms-read-only": true
+        },
+        "isprivate": {
+          "type": "string",
+          "title": "Er privat",
+          "x-ms-dataverse-attribute": "isprivate",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "IsPrivate",
+          "x-ms-read-only": true,
+          "enum": [
+            "Nei",
+            "Ja"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "02d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "opportunity_isprivate",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "isprivatename": {
+          "type": "string",
+          "title": "isprivatename",
+          "x-ms-dataverse-attribute": "isprivatename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "IsPrivateName",
+          "x-ms-read-only": true
+        },
+        "isrevenuesystemcalculated": {
+          "type": "string",
+          "title": "Omsetning",
+          "x-ms-dataverse-attribute": "isrevenuesystemcalculated",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "IsRevenueSystemCalculated",
+          "enum": [
+            "Angitt av bruker",
+            "Systemberegnet"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "04d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Omsetning",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "isrevenuesystemcalculatedname": {
+          "type": "string",
+          "title": "isrevenuesystemcalculatedname",
+          "x-ms-dataverse-attribute": "isrevenuesystemcalculatedname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "IsRevenueSystemCalculatedName",
+          "x-ms-read-only": true
+        },
+        "lastonholdtime": {
+          "type": "string",
+          "title": "Siste tid på vent",
+          "x-ms-dataverse-attribute": "lastonholdtime",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "LastOnHoldTime"
+        },
+        "modifiedby": {
+          "type": "string",
+          "title": "Endret av",
+          "x-ms-dataverse-attribute": "modifiedby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ModifiedBy",
+          "x-ms-read-only": true
+        },
+        "modifiedbyname": {
+          "type": "string",
+          "title": "modifiedbyname",
+          "x-ms-dataverse-attribute": "modifiedbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedByName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "modifiedbyyominame": {
+          "type": "string",
+          "title": "modifiedbyyominame",
+          "x-ms-dataverse-attribute": "modifiedbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedByYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "modifiedon": {
+          "type": "string",
+          "title": "Endret den",
+          "x-ms-dataverse-attribute": "modifiedon",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "ModifiedOn",
+          "x-ms-read-only": true
+        },
+        "modifiedonbehalfby": {
+          "type": "string",
+          "title": "Endret av (representant)",
+          "x-ms-dataverse-attribute": "modifiedonbehalfby",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ModifiedOnBehalfBy",
+          "x-ms-read-only": true
+        },
+        "modifiedonbehalfbyname": {
+          "type": "string",
+          "title": "modifiedonbehalfbyname",
+          "x-ms-dataverse-attribute": "modifiedonbehalfbyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedOnBehalfByName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "modifiedonbehalfbyyominame": {
+          "type": "string",
+          "title": "modifiedonbehalfbyyominame",
+          "x-ms-dataverse-attribute": "modifiedonbehalfbyyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ModifiedOnBehalfByYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "msdyn_company": {
+          "type": "string",
+          "title": "Firma",
+          "x-ms-dataverse-attribute": "msdyn_company",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "msdyn_Company",
+          "required": true
+        },
+        "msdyn_companyname": {
+          "type": "string",
+          "title": "msdyn_companyname",
+          "x-ms-dataverse-attribute": "msdyn_companyname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "msdyn_CompanyName",
+          "x-ms-read-only": true,
+          "maxLength": 20
+        },
+        "msdyn_forecastcategory": {
+          "type": "string",
+          "title": "Prognosekategori",
+          "x-ms-dataverse-attribute": "msdyn_forecastcategory",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "msdyn_forecastcategory",
+          "enum": [
+            "Pipeline",
+            "Beste scenario",
+            "Dedikert",
+            "Utelatt",
+            "Vunnet",
+            "Tapt"
+          ],
+          "x-ms-enum-values": [
+            100000001,
+            100000002,
+            100000003,
+            100000004,
+            100000005,
+            100000006
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "2c8d56b7-6c97-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Prognosekategori",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "msdyn_forecastcategoryname": {
+          "type": "string",
+          "title": "msdyn_forecastcategoryname",
+          "x-ms-dataverse-attribute": "msdyn_forecastcategoryname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "msdyn_forecastcategoryName",
+          "x-ms-read-only": true
+        },
+        "msdyn_gdproptout": {
+          "type": "string",
+          "title": "Reservasjon mot GDPR",
+          "x-ms-dataverse-attribute": "msdyn_gdproptout",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "msdyn_gdproptout",
+          "enum": [
+            "Nei",
+            "Ja"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "57ed726d-2b7b-ec11-8d21-6045bd906e4a",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Reservasjon mot GDPR",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "msdyn_gdproptoutname": {
+          "type": "string",
+          "title": "msdyn_gdproptoutname",
+          "x-ms-dataverse-attribute": "msdyn_gdproptoutname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "msdyn_gdproptoutName",
+          "x-ms-read-only": true
+        },
+        "msdyn_opportunitygrade": {
+          "type": "string",
+          "title": "(Avskrevet) Klasse for salgsmulighet",
+          "x-ms-dataverse-attribute": "msdyn_opportunitygrade",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "msdyn_OpportunityGrade",
+          "enum": [
+            "Klasse A",
+            "Klasse B",
+            "Klasse C",
+            "Klasse D"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "454fb16e-1bc8-4264-b128-d18f7dd97bd6",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Klasse for salgsmulighet",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "msdyn_opportunitygradename": {
+          "type": "string",
+          "title": "msdyn_opportunitygradename",
+          "x-ms-dataverse-attribute": "msdyn_opportunitygradename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "msdyn_opportunitygradeName",
+          "x-ms-read-only": true
+        },
+        "msdyn_opportunitykpiid": {
+          "type": "string",
+          "title": "KPI",
+          "x-ms-dataverse-attribute": "msdyn_opportunitykpiid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "msdyn_opportunitykpiid"
+        },
+        "msdyn_opportunitykpiidname": {
+          "type": "string",
+          "title": "msdyn_opportunitykpiidname",
+          "x-ms-dataverse-attribute": "msdyn_opportunitykpiidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "msdyn_opportunitykpiidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "msdyn_opportunityscore": {
+          "type": "string",
+          "title": "(Avskrevet) Poengsum for salgsmulighet",
+          "x-ms-dataverse-attribute": "msdyn_opportunityscore",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "msdyn_OpportunityScore"
+        },
+        "msdyn_opportunityscoretrend": {
+          "type": "string",
+          "title": "(Avskrevet) Poengsumtrend for salgsmulighet",
+          "x-ms-dataverse-attribute": "msdyn_opportunityscoretrend",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "msdyn_OpportunityScoreTrend",
+          "enum": [
+            "Forbedres",
+            "Jevn",
+            "Nedadgående",
+            "Ikke nok informasjon"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "1cbc016e-64ee-4f10-92ac-2fbc0bdf901a",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Poengsumtrend for salgsmulighet",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "msdyn_opportunityscoretrendname": {
+          "type": "string",
+          "title": "msdyn_opportunityscoretrendname",
+          "x-ms-dataverse-attribute": "msdyn_opportunityscoretrendname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "msdyn_opportunityscoretrendName",
+          "x-ms-read-only": true
+        },
+        "msdyn_ordertype": {
+          "type": "string",
+          "title": "Type",
+          "x-ms-dataverse-attribute": "msdyn_ordertype",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "msdyn_OrderType",
+          "enum": [
+            "Item based"
+          ],
+          "x-ms-enum-values": [
+            192350000
+          ],
+          "Color": [
+            null
+          ],
+          "x-ms-optionsetmetadataid": "3885a913-f30e-eb11-a813-000d3a2cbe51",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Type",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "msdyn_ordertypename": {
+          "type": "string",
+          "title": "msdyn_ordertypename",
+          "x-ms-dataverse-attribute": "msdyn_ordertypename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "msdyn_ordertypeName",
+          "x-ms-read-only": true
+        },
+        "msdyn_predictivescoreid": {
+          "type": "string",
+          "title": "Prediktiv poengsum",
+          "x-ms-dataverse-attribute": "msdyn_predictivescoreid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "msdyn_PredictiveScoreId"
+        },
+        "msdyn_predictivescoreidname": {
+          "type": "string",
+          "title": "msdyn_predictivescoreidname",
+          "x-ms-dataverse-attribute": "msdyn_predictivescoreidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "msdyn_PredictiveScoreIdName",
+          "x-ms-read-only": true,
+          "maxLength": 128
+        },
+        "msdyn_scorehistory": {
+          "type": "string",
+          "title": "(Avskrevet) Poengsumhistorikk",
+          "x-ms-dataverse-attribute": "msdyn_scorehistory",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "msdyn_ScoreHistory",
+          "maxLength": 2000
+        },
+        "msdyn_scorereasons": {
+          "type": "string",
+          "title": "(Avskrevet) Poengsumårsaker",
+          "x-ms-dataverse-attribute": "msdyn_scorereasons",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "msdyn_ScoreReasons",
+          "maxLength": 2000
+        },
+        "msdyn_segmentid": {
+          "type": "string",
+          "title": "Segment-ID",
+          "x-ms-dataverse-attribute": "msdyn_segmentid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "msdyn_segmentid"
+        },
+        "msdyn_segmentidname": {
+          "type": "string",
+          "title": "msdyn_segmentidname",
+          "x-ms-dataverse-attribute": "msdyn_segmentidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "msdyn_segmentidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "msdyn_similaropportunities": {
+          "type": "string",
+          "title": "msdyn_similaropportunities",
+          "x-ms-dataverse-attribute": "msdyn_similaropportunities",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "msdyn_similaropportunities",
+          "maxLength": 65536
+        },
+        "name": {
+          "type": "string",
+          "title": "Prosjektnavn",
+          "x-ms-dataverse-attribute": "name",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "Name",
+          "x-ms-dataverse-primary-name": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "need": {
+          "type": "string",
+          "title": "Behov",
+          "x-ms-dataverse-attribute": "need",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "Need",
+          "enum": [
+            "Must have",
+            "Should have",
+            "Good to have",
+            "No need"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "0872a2b1-6db1-48a9-8aa2-1686f294b1e0",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Need",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "needname": {
+          "type": "string",
+          "title": "needname",
+          "x-ms-dataverse-attribute": "needname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "NeedName",
+          "x-ms-read-only": true
+        },
+        "onholdtime": {
+          "type": "string",
+          "title": "Tid på vent (minutter)",
+          "x-ms-dataverse-attribute": "onholdtime",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "OnHoldTime",
+          "x-ms-read-only": true
+        },
+        "opportunityid": {
+          "type": "string",
+          "title": "Salgsmulighet",
+          "x-ms-dataverse-attribute": "opportunityid",
+          "x-ms-dataverse-type": "UniqueidentifierType",
+          "x-ms-schema-name": "OpportunityId",
+          "x-ms-dataverse-primary-id": true,
+          "required": true,
+          "x-ms-keyType": "primary"
+        },
+        "opportunityratingcode": {
+          "type": "string",
+          "title": "Vurdering",
+          "x-ms-dataverse-attribute": "opportunityratingcode",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "OpportunityRatingCode",
+          "enum": [
+            "Meget interessert",
+            "Varm",
+            "Lite interessert"
+          ],
+          "x-ms-enum-values": [
+            1,
+            2,
+            3
+          ],
+          "Color": [
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "07d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Vurdering",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "opportunityratingcodename": {
+          "type": "string",
+          "title": "opportunityratingcodename",
+          "x-ms-dataverse-attribute": "opportunityratingcodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "OpportunityRatingCodeName",
+          "x-ms-read-only": true
+        },
+        "originatingleadid": {
+          "type": "string",
+          "title": "Opprinnelig kundeemne",
+          "x-ms-dataverse-attribute": "originatingleadid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OriginatingLeadId"
+        },
+        "originatingleadidname": {
+          "type": "string",
+          "title": "originatingleadidname",
+          "x-ms-dataverse-attribute": "originatingleadidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OriginatingLeadIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "originatingleadidyominame": {
+          "type": "string",
+          "title": "originatingleadidyominame",
+          "x-ms-dataverse-attribute": "originatingleadidyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OriginatingLeadIdYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "overriddencreatedon": {
+          "type": "string",
+          "title": "Oppføring opprettet den",
+          "x-ms-dataverse-attribute": "overriddencreatedon",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "OverriddenCreatedOn"
+        },
+        "ownerid": {
+          "type": "string",
+          "title": "Eier",
+          "x-ms-dataverse-attribute": "ownerid",
+          "x-ms-dataverse-type": "OwnerType",
+          "x-ms-schema-name": "OwnerId",
+          "required": true
+        },
+        "owneridname": {
+          "type": "string",
+          "title": "owneridname",
+          "x-ms-dataverse-attribute": "owneridname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OwnerIdName",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "owneridtype": {
+          "type": "string",
+          "title": "owneridtype",
+          "x-ms-dataverse-attribute": "owneridtype",
+          "x-ms-dataverse-type": "EntityNameType",
+          "x-ms-schema-name": "OwnerIdType",
+          "required": true
+        },
+        "owneridyominame": {
+          "type": "string",
+          "title": "owneridyominame",
+          "x-ms-dataverse-attribute": "owneridyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OwnerIdYomiName",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "owningbusinessunit": {
+          "type": "string",
+          "title": "Eiende forretningsenhet",
+          "x-ms-dataverse-attribute": "owningbusinessunit",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OwningBusinessUnit"
+        },
+        "owningbusinessunitname": {
+          "type": "string",
+          "title": "owningbusinessunitname",
+          "x-ms-dataverse-attribute": "owningbusinessunitname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "OwningBusinessUnitName",
+          "x-ms-read-only": true,
+          "maxLength": 160
+        },
+        "owningteam": {
+          "type": "string",
+          "title": "Eiende team",
+          "x-ms-dataverse-attribute": "owningteam",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OwningTeam",
+          "x-ms-read-only": true
+        },
+        "owninguser": {
+          "type": "string",
+          "title": "Eiende bruker",
+          "x-ms-dataverse-attribute": "owninguser",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "OwningUser",
+          "x-ms-read-only": true
+        },
+        "parentaccountid": {
+          "type": "string",
+          "title": "Kunde",
+          "x-ms-dataverse-attribute": "parentaccountid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ParentAccountId"
+        },
+        "parentaccountidname": {
+          "type": "string",
+          "title": "parentaccountidname",
+          "x-ms-dataverse-attribute": "parentaccountidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ParentAccountIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "parentaccountidyominame": {
+          "type": "string",
+          "title": "parentaccountidyominame",
+          "x-ms-dataverse-attribute": "parentaccountidyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ParentAccountIdYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "parentcontactid": {
+          "type": "string",
+          "title": "Kontakt",
+          "x-ms-dataverse-attribute": "parentcontactid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "ParentContactId"
+        },
+        "parentcontactidname": {
+          "type": "string",
+          "title": "parentcontactidname",
+          "x-ms-dataverse-attribute": "parentcontactidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ParentContactIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "parentcontactidyominame": {
+          "type": "string",
+          "title": "parentcontactidyominame",
+          "x-ms-dataverse-attribute": "parentcontactidyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "ParentContactIdYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "participatesinworkflow": {
+          "type": "string",
+          "title": "Deltar i arbeidsflyt",
+          "x-ms-dataverse-attribute": "participatesinworkflow",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "ParticipatesInWorkflow",
+          "enum": [
+            "Nei",
+            "Ja"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "0ad2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Deltar i arbeidsflyt",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "participatesinworkflowname": {
+          "type": "string",
+          "title": "participatesinworkflowname",
+          "x-ms-dataverse-attribute": "participatesinworkflowname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "ParticipatesInWorkflowName",
+          "x-ms-read-only": true
+        },
+        "presentfinalproposal": {
+          "type": "string",
+          "title": "Presenter endelig forslag",
+          "x-ms-dataverse-attribute": "presentfinalproposal",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "PresentFinalProposal",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "5c9cddd9-3a5d-4f05-86f3-16e1df1f34bc",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Identifisert oppfølgingsteam?",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "presentfinalproposalname": {
+          "type": "string",
+          "title": "presentfinalproposalname",
+          "x-ms-dataverse-attribute": "presentfinalproposalname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PresentFinalProposalName",
+          "x-ms-read-only": true
+        },
+        "presentproposal": {
+          "type": "string",
+          "title": "Presentert forslag",
+          "x-ms-dataverse-attribute": "presentproposal",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "PresentProposal",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "13d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Presentert forslag",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "presentproposalname": {
+          "type": "string",
+          "title": "presentproposalname",
+          "x-ms-dataverse-attribute": "presentproposalname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PresentProposalName",
+          "x-ms-read-only": true
+        },
+        "pricelevelid": {
+          "type": "string",
+          "title": "Prisliste",
+          "x-ms-dataverse-attribute": "pricelevelid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "PriceLevelId"
+        },
+        "pricelevelidname": {
+          "type": "string",
+          "title": "pricelevelidname",
+          "x-ms-dataverse-attribute": "pricelevelidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "PriceLevelIdName",
+          "x-ms-read-only": true,
+          "required": true,
+          "maxLength": 100
+        },
+        "pricingerrorcode": {
+          "type": "string",
+          "title": "Prissettingsfeil ",
+          "x-ms-dataverse-attribute": "pricingerrorcode",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "PricingErrorCode",
+          "enum": [
+            "Ingen",
+            "Detaljer om feil",
+            "Mangler prisnivå",
+            "Inaktivt prisnivå",
+            "Mangler antall",
+            "Mangler enhetspris",
+            "Mangler produkt",
+            "Ugyldig produkt",
+            "Mangler priskode",
+            "Ugyldig priskode",
+            "Mangler målenhet",
+            "Produktet er ikke i prisnivå",
+            "Mangler prisnivåbeløp",
+            "Mangler prisnivåprosent",
+            "Mangler pris",
+            "Mangler gjeldende kostnad",
+            "Mangler standardkostnad",
+            "Ugyldig prisnivåbeløp",
+            "Ugyldig prisnivåprosent",
+            "Ugyldig pris",
+            "Ugyldig gjeldende kostnad",
+            "Ugyldig standardkostnad",
+            "Ugyldig avrundingspolicy",
+            "Ugyldig avrundingsalternativ",
+            "Ugyldig avrundingsbeløp",
+            "Prisberegningsfeil",
+            "Ugyldig rabattype",
+            "Ugyldig status for rabattype",
+            "Ugyldig rabatt",
+            "Ugyldig antall",
+            "Ugyldig prispresisjon",
+            "Mangler standard målenhet for produkt",
+            "Mangler tidsplan for målenhet for produkt ",
+            "Inaktiv rabattype",
+            "Ugyldig prisnivåvaluta",
+            "Prisattributt utenfor gyldig område",
+            "Overflyt for standardvalutaattributt",
+            "Underflyt for standardvalutaattributt",
+            "Transaksjonsvalutaen er ikke angitt for produktets prislisteelement"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "23dad339-9ede-445a-8f63-7b6eec0470a3",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Prissettingsfeil ",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "pricingerrorcodename": {
+          "type": "string",
+          "title": "pricingerrorcodename",
+          "x-ms-dataverse-attribute": "pricingerrorcodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PricingErrorCodeName",
+          "x-ms-read-only": true
+        },
+        "prioritycode": {
+          "type": "string",
+          "title": "Prioritet",
+          "x-ms-dataverse-attribute": "prioritycode",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "PriorityCode",
+          "enum": [
+            "Standardverdi"
+          ],
+          "x-ms-enum-values": [
+            1
+          ],
+          "Color": [
+            null
+          ],
+          "x-ms-optionsetmetadataid": "0dd2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Prioritet",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "prioritycodename": {
+          "type": "string",
+          "title": "prioritycodename",
+          "x-ms-dataverse-attribute": "prioritycodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PriorityCodeName",
+          "x-ms-read-only": true
+        },
+        "processid": {
+          "type": "string",
+          "title": "Prosess-ID",
+          "x-ms-dataverse-attribute": "processid",
+          "x-ms-dataverse-type": "UniqueidentifierType",
+          "x-ms-schema-name": "ProcessId"
+        },
+        "proposedsolution": {
+          "type": "string",
+          "title": "Foreslått løsning",
+          "x-ms-dataverse-attribute": "proposedsolution",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "ProposedSolution",
+          "maxLength": 2000
+        },
+        "purchaseprocess": {
+          "type": "string",
+          "title": "Innkjøpsprosess",
+          "x-ms-dataverse-attribute": "purchaseprocess",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "PurchaseProcess",
+          "enum": [
+            "Individual",
+            "Committee",
+            "Unknown"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2
+          ],
+          "Color": [
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "fcdd7e74-7a6f-4b9a-b757-daa19ed563d7",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Purchase Process",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "purchaseprocessname": {
+          "type": "string",
+          "title": "purchaseprocessname",
+          "x-ms-dataverse-attribute": "purchaseprocessname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PurchaseProcessName",
+          "x-ms-read-only": true
+        },
+        "purchasetimeframe": {
+          "type": "string",
+          "title": "Tidsperiode for kjøp",
+          "x-ms-dataverse-attribute": "purchasetimeframe",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "PurchaseTimeframe",
+          "enum": [
+            "Immediate",
+            "This Quarter",
+            "Next Quarter",
+            "This Year",
+            "Unknown"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "2378f947-224d-46a3-ac12-124a951388e2",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Purchase Timeframe",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "purchasetimeframename": {
+          "type": "string",
+          "title": "purchasetimeframename",
+          "x-ms-dataverse-attribute": "purchasetimeframename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PurchaseTimeframeName",
+          "x-ms-read-only": true
+        },
+        "pursuitdecision": {
+          "type": "string",
+          "title": "Avgjøre klarsignal/avslutning",
+          "x-ms-dataverse-attribute": "pursuitdecision",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "PursuitDecision",
+          "enum": [
+            "Ja",
+            "Nei"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "19d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Oppfølgingsbeslutning",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "pursuitdecisionname": {
+          "type": "string",
+          "title": "pursuitdecisionname",
+          "x-ms-dataverse-attribute": "pursuitdecisionname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "PursuitDecisionName",
+          "x-ms-read-only": true
+        },
+        "qualificationcomments": {
+          "type": "string",
+          "title": "Kommentarer om kvalifikasjoner",
+          "x-ms-dataverse-attribute": "qualificationcomments",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "QualificationComments",
+          "maxLength": 2000
+        },
+        "quotecomments": {
+          "type": "string",
+          "title": "Kommentarer til tilbud",
+          "x-ms-dataverse-attribute": "quotecomments",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "QuoteComments",
+          "maxLength": 2000
+        },
+        "resolvefeedback": {
+          "type": "string",
+          "title": "Tilbakemelding er avsluttet",
+          "x-ms-dataverse-attribute": "resolvefeedback",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "ResolveFeedback",
+          "enum": [
+            "Ja",
+            "Nei"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "f5d1dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Tilbakemelding er avsluttet",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "resolvefeedbackname": {
+          "type": "string",
+          "title": "resolvefeedbackname",
+          "x-ms-dataverse-attribute": "resolvefeedbackname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "ResolveFeedbackName",
+          "x-ms-read-only": true
+        },
+        "salesstage": {
+          "type": "string",
+          "title": "Salgsfase",
+          "x-ms-dataverse-attribute": "salesstage",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "SalesStage",
+          "enum": [
+            "Kvalifiser",
+            "Utarbeid",
+            "Foreslå",
+            "Lukk"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "3de5f647-b149-4c82-b275-dd91e860b08d",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Salgsfase for salgsmulighet",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "salesstagecode": {
+          "type": "string",
+          "title": "Prosesskode",
+          "x-ms-dataverse-attribute": "salesstagecode",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "SalesStageCode",
+          "enum": [
+            "Standardverdi"
+          ],
+          "x-ms-enum-values": [
+            1
+          ],
+          "Color": [
+            null
+          ],
+          "x-ms-optionsetmetadataid": "10d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Prosesskode",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "salesstagecodename": {
+          "type": "string",
+          "title": "salesstagecodename",
+          "x-ms-dataverse-attribute": "salesstagecodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "SalesStageCodeName",
+          "x-ms-read-only": true
+        },
+        "salesstagename": {
+          "type": "string",
+          "title": "salesstagename",
+          "x-ms-dataverse-attribute": "salesstagename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "SalesStageName",
+          "x-ms-read-only": true
+        },
+        "schedulefollowup_prospect": {
+          "type": "string",
+          "title": "Planlagt oppfølging (mulig kunde)",
+          "x-ms-dataverse-attribute": "schedulefollowup_prospect",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "ScheduleFollowup_Prospect"
+        },
+        "schedulefollowup_qualify": {
+          "type": "string",
+          "title": "Planlagt oppfølging (kvalifiser)",
+          "x-ms-dataverse-attribute": "schedulefollowup_qualify",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "ScheduleFollowup_Qualify"
+        },
+        "scheduleproposalmeeting": {
+          "type": "string",
+          "title": "Planlegg forslagsmøte",
+          "x-ms-dataverse-attribute": "scheduleproposalmeeting",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "ScheduleProposalMeeting"
+        },
+        "sendthankyounote": {
+          "type": "string",
+          "title": "Send takkemelding",
+          "x-ms-dataverse-attribute": "sendthankyounote",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "SendThankYouNote",
+          "enum": [
+            "Merk som fullført",
+            "fullført"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "1cd2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Send takkemelding",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "sendthankyounotename": {
+          "type": "string",
+          "title": "sendthankyounotename",
+          "x-ms-dataverse-attribute": "sendthankyounotename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "SendThankYouNoteName",
+          "x-ms-read-only": true
+        },
+        "skippricecalculation": {
+          "type": "string",
+          "title": "Hopp over prisberegning",
+          "x-ms-dataverse-attribute": "skippricecalculation",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "SkipPriceCalculation",
+          "enum": [
+            "DoPriceCalcAlways",
+            "SkipPriceCalcOnRetrieve"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "ab0ed0ef-987c-4b8e-9c57-e426875316a4",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Alternativsett for SkipPriceCalculation",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "skippricecalculationname": {
+          "type": "string",
+          "title": "skippricecalculationname",
+          "x-ms-dataverse-attribute": "skippricecalculationname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "skippricecalculationName",
+          "x-ms-read-only": true
+        },
+        "slaid": {
+          "type": "string",
+          "title": "Serviceavtale",
+          "x-ms-dataverse-attribute": "slaid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "SLAId"
+        },
+        "slainvokedid": {
+          "type": "string",
+          "title": "Siste serviceavtale brukt",
+          "x-ms-dataverse-attribute": "slainvokedid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "SLAInvokedId",
+          "x-ms-read-only": true
+        },
+        "slainvokedidname": {
+          "type": "string",
+          "title": "slainvokedidname",
+          "x-ms-dataverse-attribute": "slainvokedidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "SLAInvokedIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "slaname": {
+          "type": "string",
+          "title": "slaname",
+          "x-ms-dataverse-attribute": "slaname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "SLAName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "stageid": {
+          "type": "string",
+          "title": "(Avskrevet) Fase-ID",
+          "x-ms-dataverse-attribute": "stageid",
+          "x-ms-dataverse-type": "UniqueidentifierType",
+          "x-ms-schema-name": "StageId"
+        },
+        "statecode": {
+          "type": "string",
+          "title": "Status",
+          "x-ms-dataverse-attribute": "statecode",
+          "x-ms-dataverse-type": "StateType",
+          "x-ms-schema-name": "StateCode",
+          "required": true,
+          "enum": [
+            "Åpne",
+            "Vunnet",
+            "Tapt"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2
+          ],
+          "Color": [
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "1fd2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Status",
+          "x-ms-optionSetType": "State"
+        },
+        "statecodename": {
+          "type": "string",
+          "title": "statecodename",
+          "x-ms-dataverse-attribute": "statecodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "StateCodeName",
+          "x-ms-read-only": true
+        },
+        "statuscode": {
+          "type": "string",
+          "title": "Statusårsak",
+          "x-ms-dataverse-attribute": "statuscode",
+          "x-ms-dataverse-type": "StatusType",
+          "x-ms-schema-name": "StatusCode",
+          "enum": [
+            "Påbegynt",
+            "På vent",
+            "Tilbud påbegynt",
+            "Tilbud sendt",
+            "Tilbud bekreftet",
+            "Vunnet",
+            "Tilbud vunnet",
+            "Annullert",
+            "Utsolgt",
+            "Kan ikke kontakte",
+            "Ikke lenger interessert"
+          ],
+          "x-ms-enum-values": [
+            1,
+            2,
+            751370002,
+            751370003,
+            751370004,
+            3,
+            751370006,
+            4,
+            5,
+            751370000,
+            751370001
+          ],
+          "Color": [
+            "#f6fa14",
+            "#ffa600",
+            "#00ffbf",
+            "#ca88d1",
+            "#55ff00",
+            "#00ff11",
+            "#15ff00",
+            "#ff0004",
+            "#ff0004",
+            "#ff0004",
+            "#ff0004"
+          ],
+          "x-ms-optionsetmetadataid": "22d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Statusårsak",
+          "x-ms-optionSetType": "Status"
+        },
+        "statuscodename": {
+          "type": "string",
+          "title": "statuscodename",
+          "x-ms-dataverse-attribute": "statuscodename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "StatusCodeName",
+          "x-ms-read-only": true
+        },
+        "stepid": {
+          "type": "string",
+          "title": "Trinn",
+          "x-ms-dataverse-attribute": "stepid",
+          "x-ms-dataverse-type": "UniqueidentifierType",
+          "x-ms-schema-name": "StepId"
+        },
+        "stepname": {
+          "type": "string",
+          "title": "Pipelinefase",
+          "x-ms-dataverse-attribute": "stepname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "StepName",
+          "maxLength": 200
+        },
+        "teamsfollowed": {
+          "type": "string",
+          "title": "TeamsFollowed",
+          "x-ms-dataverse-attribute": "teamsfollowed",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "TeamsFollowed"
+        },
+        "timeline": {
+          "type": "string",
+          "title": "Tidslinje",
+          "x-ms-dataverse-attribute": "timeline",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "TimeLine",
+          "enum": [
+            "Umiddelbart",
+            "Dette kvartalet",
+            "Neste kvartal",
+            "I år",
+            "Vet ikke"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "25d2dd5e-6997-ea11-a811-000d3a2c33ff",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Tidslinje",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "timelinename": {
+          "type": "string",
+          "title": "timelinename",
+          "x-ms-dataverse-attribute": "timelinename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "TimelineName",
+          "x-ms-read-only": true
+        },
+        "timespentbymeonemailandmeetings": {
+          "type": "string",
+          "title": "Tid brukt av meg",
+          "x-ms-dataverse-attribute": "timespentbymeonemailandmeetings",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "TimeSpentByMeOnEmailAndMeetings",
+          "x-ms-read-only": true,
+          "maxLength": 1250
+        },
+        "timezoneruleversionnumber": {
+          "type": "string",
+          "title": "Versjonsnummer for tidssoneregelen",
+          "x-ms-dataverse-attribute": "timezoneruleversionnumber",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "TimeZoneRuleVersionNumber"
+        },
+        "totalamount": {
+          "type": "string",
+          "title": "Totalbeløp",
+          "x-ms-dataverse-attribute": "totalamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalAmount"
+        },
+        "totalamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "totalamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalAmount_Base",
+          "x-ms-read-only": true
+        },
+        "totalamountlessfreight": {
+          "type": "string",
+          "title": "Totalbeløp før frakt",
+          "x-ms-dataverse-attribute": "totalamountlessfreight",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalAmountLessFreight"
+        },
+        "totalamountlessfreight_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "totalamountlessfreight_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalAmountLessFreight_Base",
+          "x-ms-read-only": true
+        },
+        "totaldiscountamount": {
+          "type": "string",
+          "title": "Totalt rabattbeløp",
+          "x-ms-dataverse-attribute": "totaldiscountamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalDiscountAmount"
+        },
+        "totaldiscountamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "totaldiscountamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalDiscountAmount_Base",
+          "x-ms-read-only": true
+        },
+        "totallineitemamount": {
+          "type": "string",
+          "title": "Totalt detaljbeløp",
+          "x-ms-dataverse-attribute": "totallineitemamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalLineItemAmount"
+        },
+        "totallineitemamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "totallineitemamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalLineItemAmount_Base",
+          "x-ms-read-only": true
+        },
+        "totallineitemdiscountamount": {
+          "type": "string",
+          "title": "Totalt rabattbeløp for linjeelement",
+          "x-ms-dataverse-attribute": "totallineitemdiscountamount",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalLineItemDiscountAmount"
+        },
+        "totallineitemdiscountamount_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "totallineitemdiscountamount_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalLineItemDiscountAmount_Base",
+          "x-ms-read-only": true
+        },
+        "totaltax": {
+          "type": "string",
+          "title": "Total avgift",
+          "x-ms-dataverse-attribute": "totaltax",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalTax"
+        },
+        "totaltax_base": {
+          "type": "string",
+          "title": "{0} (standardvaluta)",
+          "x-ms-dataverse-attribute": "totaltax_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "TotalTax_Base",
+          "x-ms-read-only": true
+        },
+        "transactioncurrencyid": {
+          "type": "string",
+          "title": "Valuta",
+          "x-ms-dataverse-attribute": "transactioncurrencyid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "TransactionCurrencyId",
+          "required": true
+        },
+        "transactioncurrencyidname": {
+          "type": "string",
+          "title": "transactioncurrencyidname",
+          "x-ms-dataverse-attribute": "transactioncurrencyidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "TransactionCurrencyIdName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "traversedpath": {
+          "type": "string",
+          "title": "(Avskrevet) Traversert bane",
+          "x-ms-dataverse-attribute": "traversedpath",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "TraversedPath",
+          "maxLength": 1250
+        },
+        "utcconversiontimezonecode": {
+          "type": "string",
+          "title": "Tidssonekode for UTC-konvertering",
+          "x-ms-dataverse-attribute": "utcconversiontimezonecode",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "UTCConversionTimeZoneCode"
+        },
+        "vdi_agreementenddate": {
+          "type": "string",
+          "title": "Avtalestart",
+          "x-ms-dataverse-attribute": "vdi_agreementenddate",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "vdi_Agreementenddate"
+        },
+        "vdi_agreementstartdate": {
+          "type": "string",
+          "title": "Avtaleslutt",
+          "x-ms-dataverse-attribute": "vdi_agreementstartdate",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "vdi_Agreementstartdate"
+        },
+        "vdi_businesstype": {
+          "type": "string",
+          "title": "Kundetype",
+          "x-ms-dataverse-attribute": "vdi_businesstype",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_businesstype",
+          "maxLength": 100
+        },
+        "vdi_companyid": {
+          "type": "string",
+          "title": "Firma",
+          "x-ms-dataverse-attribute": "vdi_companyid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_companyid"
+        },
+        "vdi_companyidname": {
+          "type": "string",
+          "title": "vdi_companyidname",
+          "x-ms-dataverse-attribute": "vdi_companyidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_companyidName",
+          "x-ms-read-only": true,
+          "maxLength": 20
+        },
+        "vdi_confidential": {
+          "type": "string",
+          "title": "Konfidensiell",
+          "x-ms-dataverse-attribute": "vdi_confidential",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "vdi_confidential",
+          "enum": [
+            "Nei",
+            "Ja"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "81396fc5-dfa4-eb11-b1ac-000d3abb1d81",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Local Enumeration",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "vdi_confidentialname": {
+          "type": "string",
+          "title": "vdi_confidentialname",
+          "x-ms-dataverse-attribute": "vdi_confidentialname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_confidentialName",
+          "x-ms-read-only": true
+        },
+        "vdi_countrelatedprojects": {
+          "type": "string",
+          "title": "Count related projects",
+          "x-ms-dataverse-attribute": "vdi_countrelatedprojects",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "vdi_countrelatedprojects"
+        },
+        "vdi_countrelatedprojects_date": {
+          "type": "string",
+          "title": "Count related projects (Sist oppdatert)",
+          "x-ms-dataverse-attribute": "vdi_countrelatedprojects_date",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "vdi_countrelatedprojects_Date",
+          "x-ms-read-only": true
+        },
+        "vdi_countrelatedprojects_state": {
+          "type": "string",
+          "title": "Count related projects (Tilstand)",
+          "x-ms-dataverse-attribute": "vdi_countrelatedprojects_state",
+          "x-ms-dataverse-type": "IntegerType",
+          "x-ms-schema-name": "vdi_countrelatedprojects_State",
+          "x-ms-read-only": true
+        },
+        "vdi_createdfromquote": {
+          "type": "string",
+          "title": "Opprettet fra Tilbud",
+          "x-ms-dataverse-attribute": "vdi_createdfromquote",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "vdi_createdfromquote",
+          "enum": [
+            "Nei",
+            "Ja"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "d0338747-6c7e-eb11-b1ab-000d3a253a0e",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Local Enumeration",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "vdi_createdfromquotename": {
+          "type": "string",
+          "title": "vdi_createdfromquotename",
+          "x-ms-dataverse-attribute": "vdi_createdfromquotename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_createdfromquoteName",
+          "x-ms-read-only": true
+        },
+        "vdi_customerreference": {
+          "type": "string",
+          "title": "Kundens referanse",
+          "x-ms-dataverse-attribute": "vdi_customerreference",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_customerreference",
+          "maxLength": 60
+        },
+        "vdi_disctrictid": {
+          "type": "string",
+          "title": "Distrikt",
+          "x-ms-dataverse-attribute": "vdi_disctrictid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_disctrictid"
+        },
+        "vdi_disctrictidname": {
+          "type": "string",
+          "title": "vdi_disctrictidname",
+          "x-ms-dataverse-attribute": "vdi_disctrictidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_disctrictidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_endcustomerid": {
+          "type": "string",
+          "title": "Sluttkunde",
+          "x-ms-dataverse-attribute": "vdi_endcustomerid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_endcustomerid"
+        },
+        "vdi_endcustomeridname": {
+          "type": "string",
+          "title": "vdi_endcustomeridname",
+          "x-ms-dataverse-attribute": "vdi_endcustomeridname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_endcustomeridName",
+          "x-ms-read-only": true,
+          "maxLength": 160
+        },
+        "vdi_endcustomeridyominame": {
+          "type": "string",
+          "title": "vdi_endcustomeridyominame",
+          "x-ms-dataverse-attribute": "vdi_endcustomeridyominame",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_endcustomeridYomiName",
+          "x-ms-read-only": true,
+          "maxLength": 160
+        },
+        "vdi_exrealisevalue": {
+          "type": "string",
+          "title": "Forventet salgsverdi",
+          "x-ms-dataverse-attribute": "vdi_exrealisevalue",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "vdi_exrealisevalue"
+        },
+        "vdi_exrealisevalue_base": {
+          "type": "string",
+          "title": "Forventet salgsverdi (Base)",
+          "x-ms-dataverse-attribute": "vdi_exrealisevalue_base",
+          "x-ms-dataverse-type": "MoneyType",
+          "x-ms-schema-name": "vdi_exrealisevalue_Base",
+          "x-ms-read-only": true
+        },
+        "vdi_exturnvalue": {
+          "type": "string",
+          "title": "Forventet omsetningsverdi",
+          "x-ms-dataverse-attribute": "vdi_exturnvalue",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_exturnvalue",
+          "enum": [
+            "0-75' - Enkle tilbud (Prislister)",
+            "75'-2M - Konfigurere tilbud",
+            "2M+ - Kalkulere tilbud"
+          ],
+          "x-ms-enum-values": [
+            10000,
+            10001,
+            10002
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "33b5b179-2c9b-ea11-a812-000d3a2cbc56",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Forventet omsetningsverdi",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_exturnvaluename": {
+          "type": "string",
+          "title": "vdi_exturnvaluename",
+          "x-ms-dataverse-attribute": "vdi_exturnvaluename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_exturnvalueName",
+          "x-ms-read-only": true
+        },
+        "vdi_facilityid": {
+          "type": "string",
+          "title": "Anlegg",
+          "x-ms-dataverse-attribute": "vdi_facilityid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_facilityid",
+          "required": true
+        },
+        "vdi_facilityidname": {
+          "type": "string",
+          "title": "vdi_facilityidname",
+          "x-ms-dataverse-attribute": "vdi_facilityidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_facilityidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_followupdeadline": {
+          "type": "string",
+          "title": "Oppfølgingsfrist",
+          "x-ms-dataverse-attribute": "vdi_followupdeadline",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "vdi_followupdeadline"
+        },
+        "vdi_frameworkagreementid": {
+          "type": "string",
+          "title": "Rammeavtale",
+          "x-ms-dataverse-attribute": "vdi_frameworkagreementid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_frameworkagreementid"
+        },
+        "vdi_frameworkagreementidname": {
+          "type": "string",
+          "title": "vdi_frameworkagreementidname",
+          "x-ms-dataverse-attribute": "vdi_frameworkagreementidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_frameworkagreementidName",
+          "x-ms-read-only": true,
+          "maxLength": 200
+        },
+        "vdi_isforecast": {
+          "type": "string",
+          "title": "isForecast",
+          "x-ms-dataverse-attribute": "vdi_isforecast",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "vdi_isforecast",
+          "enum": [
+            "No",
+            "Yes"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "fed91f0c-bddc-ef11-8eea-6045bd8b3022",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "isForecast",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "vdi_isforecastname": {
+          "type": "string",
+          "title": "vdi_isforecastname",
+          "x-ms-dataverse-attribute": "vdi_isforecastname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_isforecastName",
+          "x-ms-read-only": true
+        },
+        "vdi_masstype": {
+          "type": "string",
+          "title": "Massetype",
+          "x-ms-dataverse-attribute": "vdi_masstype",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_masstype"
+        },
+        "vdi_masstypename": {
+          "type": "string",
+          "title": "vdi_masstypename",
+          "x-ms-dataverse-attribute": "vdi_masstypename",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_masstypeName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_month": {
+          "type": "string",
+          "title": "Måned",
+          "x-ms-dataverse-attribute": "vdi_month",
+          "x-ms-dataverse-type": "MultiSelectPicklistType",
+          "x-ms-schema-name": "vdi_month",
+          "enum": [
+            "Januar",
+            "Februar",
+            "Mars",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Desember"
+          ],
+          "x-ms-enum-values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "f599059e-fd57-43d8-87e3-cac1d9010060",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Måned",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_monthname": {
+          "type": "string",
+          "title": "vdi_monthname",
+          "x-ms-dataverse-attribute": "vdi_monthname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_monthName",
+          "x-ms-read-only": true
+        },
+        "vdi_opportunitycfrunning": {
+          "type": "string",
+          "title": "opportunityCfRunning",
+          "x-ms-dataverse-attribute": "vdi_opportunitycfrunning",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "vdi_opportunityCfRunning",
+          "enum": [
+            "No",
+            "Yes"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "84c1fa8e-3cf8-f011-8406-0022488646d3",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "opportunityCfRunning",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "vdi_opportunitycfrunningname": {
+          "type": "string",
+          "title": "vdi_opportunitycfrunningname",
+          "x-ms-dataverse-attribute": "vdi_opportunitycfrunningname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_opportunitycfrunningName",
+          "x-ms-read-only": true
+        },
+        "vdi_opportunitygroupid": {
+          "type": "string",
+          "title": "Salgsmulighetsgruppering",
+          "x-ms-dataverse-attribute": "vdi_opportunitygroupid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_opportunitygroupid"
+        },
+        "vdi_opportunitygroupidname": {
+          "type": "string",
+          "title": "vdi_opportunitygroupidname",
+          "x-ms-dataverse-attribute": "vdi_opportunitygroupidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_opportunitygroupidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_opportunitysegment": {
+          "type": "string",
+          "title": "Tilbudssegment",
+          "x-ms-dataverse-attribute": "vdi_opportunitysegment",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_opportunitysegment",
+          "enum": [
+            "Statskontrakt",
+            "Småjobber",
+            "Prosjekter",
+            "Rammeavtale"
+          ],
+          "x-ms-enum-values": [
+            100000002,
+            100000000,
+            100000001,
+            751370001
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "6a140bcf-cad5-4dc9-863b-cc1add1cb01b",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Salgsmulighetssegment",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_opportunitysegmentname": {
+          "type": "string",
+          "title": "vdi_opportunitysegmentname",
+          "x-ms-dataverse-attribute": "vdi_opportunitysegmentname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_opportunitysegmentName",
+          "x-ms-read-only": true
+        },
+        "vdi_opportunitytype": {
+          "type": "string",
+          "title": "Type salgsmulighet",
+          "x-ms-dataverse-attribute": "vdi_opportunitytype",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_opportunitytype",
+          "enum": [
+            "Mersalg",
+            "Prosjekt",
+            "Rammeavtale"
+          ],
+          "x-ms-enum-values": [
+            10003,
+            10000,
+            10002
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "37b5b179-2c9b-ea11-a812-000d3a2cbc56",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Type salgsmulighet",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_opportunitytypename": {
+          "type": "string",
+          "title": "vdi_opportunitytypename",
+          "x-ms-dataverse-attribute": "vdi_opportunitytypename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_opportunitytypeName",
+          "x-ms-read-only": true
+        },
+        "vdi_placeid": {
+          "type": "string",
+          "title": "Sted",
+          "x-ms-dataverse-attribute": "vdi_placeid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_placeid"
+        },
+        "vdi_placeidname": {
+          "type": "string",
+          "title": "vdi_placeidname",
+          "x-ms-dataverse-attribute": "vdi_placeidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_placeidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_quoteid": {
+          "type": "string",
+          "title": "Tilbud",
+          "x-ms-dataverse-attribute": "vdi_quoteid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_quoteid"
+        },
+        "vdi_quoteidname": {
+          "type": "string",
+          "title": "vdi_quoteidname",
+          "x-ms-dataverse-attribute": "vdi_quoteidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_quoteidName",
+          "x-ms-read-only": true,
+          "maxLength": 300
+        },
+        "vdi_quotetype": {
+          "type": "string",
+          "title": "Tilbudstype",
+          "x-ms-dataverse-attribute": "vdi_quotetype",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_quotetype",
+          "enum": [
+            "Kalkulasjon",
+            "Avrop Rammeavtale",
+            "Prisliste"
+          ],
+          "x-ms-enum-values": [
+            751370000,
+            751370001,
+            751370002
+          ],
+          "Color": [
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "48d24d08-b6da-4327-9539-6461d96ddbee",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Tilbudstype",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_quotetypename": {
+          "type": "string",
+          "title": "vdi_quotetypename",
+          "x-ms-dataverse-attribute": "vdi_quotetypename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_quotetypeName",
+          "x-ms-read-only": true
+        },
+        "vdi_requirecompany": {
+          "type": "string",
+          "title": "Require company",
+          "x-ms-dataverse-attribute": "vdi_requirecompany",
+          "x-ms-dataverse-type": "BooleanType",
+          "x-ms-schema-name": "vdi_Requirecompany",
+          "enum": [
+            "Nei",
+            "Ja"
+          ],
+          "x-ms-enum-values": [
+            0,
+            1
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "109dfcd6-a00f-eb11-a81a-000d3a253e09",
+          "x-ms-isGlobal": false,
+          "x-ms-optionsetdisplayname": "Local Enumeration",
+          "x-ms-optionSetType": "Boolean"
+        },
+        "vdi_requirecompanyname": {
+          "type": "string",
+          "title": "vdi_requirecompanyname",
+          "x-ms-dataverse-attribute": "vdi_requirecompanyname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_requirecompanyName",
+          "x-ms-read-only": true
+        },
+        "vdi_segment": {
+          "type": "string",
+          "title": "Segment",
+          "x-ms-dataverse-attribute": "vdi_segment",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_segment",
+          "enum": [
+            "Ab-verk",
+            "Nytt veiprosjekt",
+            "Dekkevedlikehold",
+            "Flyplass",
+            "Handel og industri",
+            "Kaldaktiviteter",
+            "Privat vei / Plass",
+            "Spreeder / grøfter",
+            "Prising av Rammeavtale / Prisliste"
+          ],
+          "x-ms-enum-values": [
+            751370000,
+            751370001,
+            751370002,
+            751370003,
+            751370004,
+            100000001,
+            751370005,
+            751370006,
+            751370007
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "679e872c-397d-4112-8d80-06d5c9df6494",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Segment",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_segmentname": {
+          "type": "string",
+          "title": "vdi_segmentname",
+          "x-ms-dataverse-attribute": "vdi_segmentname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_segmentName",
+          "x-ms-read-only": true
+        },
+        "vdi_servicesegment": {
+          "type": "string",
+          "title": "Tjenestesegment",
+          "x-ms-dataverse-attribute": "vdi_servicesegment",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_servicesegment"
+        },
+        "vdi_servicesegmentname": {
+          "type": "string",
+          "title": "vdi_servicesegmentname",
+          "x-ms-dataverse-attribute": "vdi_servicesegmentname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_servicesegmentName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_source": {
+          "type": "string",
+          "title": "Kilde",
+          "x-ms-dataverse-attribute": "vdi_source",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_source",
+          "enum": [
+            "Langtidsplan",
+            "Veidekke.no"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001
+          ],
+          "Color": [
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "4b19dee1-71d0-4aad-9c9d-cdc6347b916f",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Salgsmulighetkilde",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_sourcename": {
+          "type": "string",
+          "title": "vdi_sourcename",
+          "x-ms-dataverse-attribute": "vdi_sourcename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_sourceName",
+          "x-ms-read-only": true
+        },
+        "vdi_specialneeds": {
+          "type": "string",
+          "title": "Spesielle behov",
+          "x-ms-dataverse-attribute": "vdi_specialneeds",
+          "x-ms-dataverse-type": "MemoType",
+          "x-ms-schema-name": "vdi_specialneeds",
+          "maxLength": 2000
+        },
+        "vdi_statusreason_lastupdated": {
+          "type": "string",
+          "title": "Status reason last updated",
+          "x-ms-dataverse-attribute": "vdi_statusreason_lastupdated",
+          "x-ms-dataverse-type": "DateTimeType",
+          "x-ms-schema-name": "vdi_statusreason_lastupdated"
+        },
+        "vdi_totalamount": {
+          "type": "string",
+          "title": "Totalsum",
+          "x-ms-dataverse-attribute": "vdi_totalamount",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_totalamount"
+        },
+        "vdi_totalamountname": {
+          "type": "string",
+          "title": "vdi_totalamountname",
+          "x-ms-dataverse-attribute": "vdi_totalamountname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_totalamountName",
+          "x-ms-read-only": true,
+          "maxLength": 300
+        },
+        "vdi_week": {
+          "type": "string",
+          "title": "Uke",
+          "x-ms-dataverse-attribute": "vdi_week",
+          "x-ms-dataverse-type": "MultiSelectPicklistType",
+          "x-ms-schema-name": "vdi_week",
+          "enum": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53"
+          ],
+          "x-ms-enum-values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53
+          ],
+          "Color": [
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff",
+            "#0000ff"
+          ],
+          "x-ms-optionsetmetadataid": "13f287ed-ebc7-42e1-807c-c7786db17b48",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Uke",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_weekname": {
+          "type": "string",
+          "title": "vdi_weekname",
+          "x-ms-dataverse-attribute": "vdi_weekname",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_weekName",
+          "x-ms-read-only": true
+        },
+        "vdi_worklocation": {
+          "type": "string",
+          "title": "Arbeidssted",
+          "x-ms-dataverse-attribute": "vdi_worklocation",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_worklocation",
+          "maxLength": 100
+        },
+        "vdi_workteamid": {
+          "type": "string",
+          "title": "Arbeidslag",
+          "x-ms-dataverse-attribute": "vdi_workteamid",
+          "x-ms-dataverse-type": "LookupType",
+          "x-ms-schema-name": "vdi_workteamid"
+        },
+        "vdi_workteamidname": {
+          "type": "string",
+          "title": "vdi_workteamidname",
+          "x-ms-dataverse-attribute": "vdi_workteamidname",
+          "x-ms-dataverse-type": "StringType",
+          "x-ms-schema-name": "vdi_workteamidName",
+          "x-ms-read-only": true,
+          "maxLength": 100
+        },
+        "vdi_worktype": {
+          "type": "string",
+          "title": "Jobbtype",
+          "x-ms-dataverse-attribute": "vdi_worktype",
+          "x-ms-dataverse-type": "PicklistType",
+          "x-ms-schema-name": "vdi_worktype",
+          "enum": [
+            "Asfalt",
+            "Forarbeid",
+            "Sprider",
+            "Fresing"
+          ],
+          "x-ms-enum-values": [
+            100000000,
+            100000001,
+            100000002,
+            100000003
+          ],
+          "Color": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "x-ms-optionsetmetadataid": "33020465-8f0b-4d17-97cd-00527f8cc5e8",
+          "x-ms-isGlobal": true,
+          "x-ms-optionsetdisplayname": "Jobbtype",
+          "x-ms-optionSetType": "Picklist"
+        },
+        "vdi_worktypename": {
+          "type": "string",
+          "title": "vdi_worktypename",
+          "x-ms-dataverse-attribute": "vdi_worktypename",
+          "x-ms-dataverse-type": "VirtualType",
+          "x-ms-schema-name": "vdi_worktypeName",
+          "x-ms-read-only": true
+        },
+        "versionnumber": {
+          "type": "string",
+          "title": "Versjonsnummer",
+          "x-ms-dataverse-attribute": "versionnumber",
+          "x-ms-dataverse-type": "BigIntType",
+          "x-ms-schema-name": "VersionNumber",
+          "x-ms-read-only": true
+        }
+      },
+      "required": [
+        "customerid",
+        "customeridname",
+        "customeridtype",
+        "customeridyominame",
+        "msdyn_company",
+        "name",
+        "opportunityid",
+        "ownerid",
+        "owneridname",
+        "owneridtype",
+        "owneridyominame",
+        "pricelevelidname",
+        "statecode",
+        "transactioncurrencyid",
+        "vdi_facilityid"
+      ]
+    }
+  }
+}

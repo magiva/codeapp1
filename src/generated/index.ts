@@ -4,8 +4,14 @@
  */
 
 // Models
+export * as AccountsModel from './models/AccountsModel';
 export * as CommonModels from './models/CommonModels';
 export * as ContactsModel from './models/ContactsModel';
+export * as OpportunitiesModel from './models/OpportunitiesModel';
+export * as QuotesModel from './models/QuotesModel';
 
 // Services
+export * from './services/AccountsService';
 export * from './services/ContactsService';
+export * from './services/OpportunitiesService';
+export * from './services/QuotesService';
