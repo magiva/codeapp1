@@ -1,0 +1,58 @@
+import { useQuery } from "@tanstack/react-query"
+import { useMemo, useState } from "react"
+import { ContactsService } from "@/generated/services/ContactsService"
+import type { Contacts } from "@/generated/models/ContactsModel"
+
+export function useContacts() {
+  const [search, setSearch] = useState("")
+
+  const query = useQuery({
+    queryKey: ["contacts"],
+    queryFn: async () => {
+      const result = await ContactsService.getAll({
+        select: [
+          "contactid",
+          "firstname",
+          "lastname",
+          "fullname",
+          "emailaddress1",
+          "telephone1",
+          "mobilephone",
+          "jobtitle",
+          "parentcustomeridname",
+          "statecode",
+        ],
+        filter: "statecode eq 0",
+        orderBy: ["lastname asc", "firstname asc"],
+        top: 500,
+      })
+      if (!result.data) throw new Error("Failed to load contacts")
+      return result.data
+    },
+  })
+
+  const filtered = useMemo((): Contacts[] => {
+    if (!query.data) return []
+    const term = search.toLowerCase().trim()
+    if (!term) return query.data
+    const words = term.split(/\s+/).filter(Boolean)
+    return query.data.filter((c) => {
+      const haystack = [
+        c.firstname,
+        c.lastname,
+        c.fullname,
+        c.emailaddress1,
+        c.telephone1,
+        c.mobilephone,
+        c.jobtitle,
+        c.parentcustomeridname,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+      return words.every((word) => haystack.includes(word))
+    })
+  }, [query.data, search])
+
+  return { ...query, filtered, search, setSearch }
+}

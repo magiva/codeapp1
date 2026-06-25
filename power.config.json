@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "appId": null,
+  "appDisplayName": "VDI Contacts Demo",
+  "region": "prod",
+  "environmentId": "f02c6a98-b22e-4459-a325-e0d0fc873b68",
+  "description": " ",
+  "buildPath": "dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:5173",
+  "logoPath": "Default",
+  "connectionReferences": {},
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "kontakter": {
+          "entitySetName": "contacts",
+          "logicalName": "contact"
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}
