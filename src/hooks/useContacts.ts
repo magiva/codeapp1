@@ -10,19 +10,18 @@ export function useContacts() {
     queryKey: ["contacts"],
     queryFn: async () => {
       const result = await ContactsService.getAll({
+        // fullname and parentcustomeridname are computed fields — don't put them in select
+        // They are still returned automatically by the API
         select: [
           "contactid",
           "firstname",
           "lastname",
-          "fullname",
           "emailaddress1",
           "telephone1",
           "mobilephone",
           "jobtitle",
-          "parentcustomeridname",
           "statecode",
         ],
-        filter: "statecode eq 0",
         orderBy: ["lastname asc", "firstname asc"],
         top: 500,
       })
@@ -40,12 +39,13 @@ export function useContacts() {
       const haystack = [
         c.firstname,
         c.lastname,
+        // fullname & parentcustomeridname are returned by API even without explicit select
         c.fullname,
+        c.parentcustomeridname,
         c.emailaddress1,
         c.telephone1,
         c.mobilephone,
         c.jobtitle,
-        c.parentcustomeridname,
       ]
         .filter(Boolean)
         .join(" ")
