@@ -10,10 +10,10 @@ export function useContacts() {
     queryKey: ["contacts"],
     queryFn: async () => {
       const result = await ContactsService.getAll({
-        // fullname and parentcustomeridname are computed fields — don't put them in select
-        // They are still returned automatically by the API
+        // fullname is selectable; parentcustomeridname is a lookup display name — auto-returned, not selectable
         select: [
           "contactid",
+          "fullname",
           "firstname",
           "lastname",
           "emailaddress1",
@@ -22,6 +22,7 @@ export function useContacts() {
           "jobtitle",
           "statecode",
         ],
+        filter: "statecode eq 0",
         orderBy: ["lastname asc", "firstname asc"],
         top: 500,
       })
