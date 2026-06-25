@@ -1,18 +1,170 @@
+import { useState } from "react"
 import { useContacts } from "@/hooks/useContacts"
+import { useContactDetail } from "@/hooks/useContactDetail"
 import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
-import { Search, Mail, Phone, Building2, User, AlertCircle } from "lucide-react"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { Separator } from "@/components/ui/separator"
+import {
+  Search, Mail, Phone, Building2, User, AlertCircle,
+  MapPin, Globe, Briefcase, Smartphone, CalendarDays, FileText,
+} from "lucide-react"
 import type { Contacts } from "@/generated/models/ContactsModel"
 
-function ContactCard({ contact }: { contact: Contacts }) {
+function DetailRow({ icon, label, value, href }: {
+  icon: React.ReactNode
+  label: string
+  value?: string | null
+  href?: string
+}) {
+  if (!value) return null
+  return (
+    <div className="flex items-start gap-3">
+      <div className="mt-0.5 text-zinc-400 shrink-0">{icon}</div>
+      <div className="min-w-0">
+        <p className="text-xs text-zinc-400 mb-0.5">{label}</p>
+        {href ? (
+          <a href={href} className="text-sm text-zinc-800 hover:text-[#D32C1E] break-all transition-colors">
+            {value}
+          </a>
+        ) : (
+          <p className="text-sm text-zinc-800 break-words">{value}</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ContactDetailDialog({ contactId, onClose }: { contactId: string | null; onClose: () => void }) {
+  const { data, isLoading, isError } = useContactDetail(contactId)
+
+  const displayName = data?.fullname?.trim() ||
+    [data?.firstname, data?.lastname].filter(Boolean).join(" ") ||
+    "Contact"
+
+  const addressParts = [
+    data?.address1_line1,
+    data?.address1_line2,
+    data?.address1_city,
+    data?.address1_stateorprovince,
+    data?.address1_postalcode,
+    data?.address1_country,
+  ].filter(Boolean)
+  const address = addressParts.join(", ")
+
+  const initials = (data?.firstname?.[0] ?? data?.lastname?.[0] ?? "?").toUpperCase()
+
+  return (
+    <Dialog open={!!contactId} onOpenChange={(open) => { if (!open) onClose() }}>
+      <DialogContent className="max-w-lg rounded-none p-0 overflow-hidden gap-0">
+        {/* Coloured header */}
+        <div className="bg-black px-6 py-5 flex items-center gap-4">
+          <div className="h-14 w-14 rounded-full bg-[#D32C1E] flex items-center justify-center shrink-0">
+            {isLoading
+              ? <Skeleton className="h-14 w-14 rounded-full bg-zinc-700" />
+              : <span className="text-white text-xl font-bold select-none">{initials}</span>
+            }
+          </div>
+          <div className="min-w-0">
+            {isLoading
+              ? <><Skeleton className="h-5 w-40 bg-zinc-700 mb-2" /><Skeleton className="h-3.5 w-28 bg-zinc-700" /></>
+              : <>
+                <DialogTitle className="text-white font-semibold text-lg leading-tight truncate">
+                  {displayName}
+                </DialogTitle>
+                {data?.jobtitle && (
+                  <p className="text-zinc-400 text-sm truncate">{data.jobtitle}</p>
+                )}
+              </>
+            }
+          </div>
+        </div>
+
+        {/* Body */}
+        <div className="px-6 py-5 max-h-[60vh] overflow-y-auto">
+          {isError && (
+            <div className="flex items-center gap-2 text-red-600 text-sm">
+              <AlertCircle className="h-4 w-4 shrink-0" />
+              Failed to load contact details.
+            </div>
+          )}
+
+          {isLoading && (
+            <div className="space-y-4">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <Skeleton className="h-4 w-4 rounded" />
+                  <div className="space-y-1.5 flex-1">
+                    <Skeleton className="h-3 w-20" />
+                    <Skeleton className="h-4 w-48" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {data && (
+            <div className="space-y-4">
+              {/* Organisation */}
+              {(data.parentcustomeridname || data.department) && (
+                <>
+                  <div className="space-y-3">
+                    <DetailRow icon={<Building2 className="h-4 w-4" />} label="Company" value={data.parentcustomeridname} />
+                    <DetailRow icon={<Briefcase className="h-4 w-4" />} label="Department" value={data.department} />
+                  </div>
+                  <Separator />
+                </>
+              )}
+
+              {/* Contact */}
+              {(data.emailaddress1 || data.emailaddress2 || data.telephone1 || data.telephone2 || data.mobilephone) && (
+                <>
+                  <div className="space-y-3">
+                    <DetailRow icon={<Mail className="h-4 w-4" />} label="Email" value={data.emailaddress1} href={data.emailaddress1 ? `mailto:${data.emailaddress1}` : undefined} />
+                    <DetailRow icon={<Mail className="h-4 w-4" />} label="Email 2" value={data.emailaddress2} href={data.emailaddress2 ? `mailto:${data.emailaddress2}` : undefined} />
+                    <DetailRow icon={<Phone className="h-4 w-4" />} label="Phone" value={data.telephone1} href={data.telephone1 ? `tel:${data.telephone1}` : undefined} />
+                    <DetailRow icon={<Phone className="h-4 w-4" />} label="Phone 2" value={data.telephone2} href={data.telephone2 ? `tel:${data.telephone2}` : undefined} />
+                    <DetailRow icon={<Smartphone className="h-4 w-4" />} label="Mobile" value={data.mobilephone} href={data.mobilephone ? `tel:${data.mobilephone}` : undefined} />
+                  </div>
+                  <Separator />
+                </>
+              )}
+
+              {/* Location */}
+              {address && (
+                <>
+                  <div className="space-y-3">
+                    <DetailRow icon={<MapPin className="h-4 w-4" />} label="Address" value={address} />
+                  </div>
+                  <Separator />
+                </>
+              )}
+
+              {/* Other */}
+              <div className="space-y-3">
+                <DetailRow icon={<Globe className="h-4 w-4" />} label="Website" value={data.websiteurl} href={data.websiteurl ?? undefined} />
+                <DetailRow icon={<CalendarDays className="h-4 w-4" />} label="Birthday" value={data.birthdate ? new Date(data.birthdate).toLocaleDateString() : null} />
+                <DetailRow icon={<FileText className="h-4 w-4" />} label="Notes" value={data.description} />
+              </div>
+            </div>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+function ContactCard({ contact, onClick }: { contact: Contacts; onClick: () => void }) {
   const displayName = contact.fullname?.trim() ||
     [contact.firstname, contact.lastname].filter(Boolean).join(" ") ||
     "Unnamed Contact"
   const phone = contact.telephone1 || contact.mobilephone
 
   return (
-    <Card className="group hover:shadow-md transition-shadow border border-zinc-200 rounded-none">
-      <CardContent className="p-5 flex flex-col gap-3">
+    <Card
+      onClick={onClick}
+      className="group hover:shadow-md transition-shadow border border-zinc-200 rounded-none cursor-pointer hover:border-[#D32C1E]"
+    >      <CardContent className="p-5 flex flex-col gap-3">
         {/* Avatar + Name */}
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full bg-[#D32C1E] flex items-center justify-center shrink-0">
@@ -89,6 +241,7 @@ function SkeletonCard() {
 
 export default function HomePage() {
   const { filtered, isLoading, isError, error, search, setSearch, data } = useContacts()
+  const [selectedId, setSelectedId] = useState<string | null>(null)
 
   return (
     <div className="min-h-full flex flex-col bg-zinc-50">
@@ -186,12 +339,18 @@ export default function HomePage() {
           {!isLoading && !isError && filtered.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {filtered.map((contact) => (
-                <ContactCard key={contact.contactid} contact={contact} />
+                <ContactCard
+                  key={contact.contactid}
+                  contact={contact}
+                  onClick={() => setSelectedId(contact.contactid)}
+                />
               ))}
             </div>
           )}
         </div>
       </main>
+
+      <ContactDetailDialog contactId={selectedId} onClose={() => setSelectedId(null)} />
     </div>
   )
 }
